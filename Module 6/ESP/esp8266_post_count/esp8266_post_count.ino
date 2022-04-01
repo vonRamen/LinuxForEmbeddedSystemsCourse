@@ -4,8 +4,8 @@
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266HTTPClient.h>
 
-const char* WIFI_SSID = "";
-const char* WIFI_PASSWORD = "";
+const char* WIFI_SSID = "LEO1_TEAM_11";
+const char* WIFI_PASSWORD = "group110";
 
 ESP8266WiFiMulti WiFiMulti;
 
@@ -46,6 +46,7 @@ void setup()
 
   // serial
   Serial.begin(115200);
+  Serial.setDebugOutput(true);
   delay(10);
   // We start by connecting to a WiFi network
   Serial.println();
