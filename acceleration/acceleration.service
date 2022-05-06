@@ -1,0 +1,15 @@
+[Unit]
+Description=acceleration reading and logging service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/bin/ python /home/pi/acceleration/acceleration_read.py
+
+
+[Install]
+WantedBy=multi-user.target
