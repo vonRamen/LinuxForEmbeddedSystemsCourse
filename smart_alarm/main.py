@@ -30,7 +30,7 @@ DIALOGFLOW_PROJECT_ID = 'alexa-elxq'
 DIALOGFLOW_LANGUAGE_CODE = 'en'
 SESSION_ID = 'me'
 global alarmSoundPath
-alarmSoundPath = "static_files/generic_alarm.mp3"
+alarmSoundPath = "/static_files/generic_alarm.mp3"
 global dateTimeForNextAlarm
 dateTimeForNextAlarm = None
 
