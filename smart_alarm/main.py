@@ -38,7 +38,7 @@ dayoftheweekToString = {0: "Monday", 1:"Tuesday", 2:"Wednesday", 3:"Thursday", 4
 
 def playsound(path, block=True):
     mixer.init()
-    mixer.music.load(ROOT_DIR+path)
+    mixer.music.load(ROOT_DIR+"/"+path)
     mixer.music.play()
     while mixer.music.get_busy() == True and block == True:
         continue
