@@ -21,6 +21,7 @@ from google.api_core.exceptions import InvalidArgument
 from google.protobuf.json_format import MessageToDict
 from google.cloud import dialogflow_v2beta1 as dialogflow
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 mixer.init() 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'private_key.json'
@@ -37,7 +38,7 @@ dayoftheweekToString = {0: "Monday", 1:"Tuesday", 2:"Wednesday", 3:"Thursday", 4
 
 def playsound(path, block=True):
     mixer.init()
-    mixer.music.load(path)
+    mixer.music.load(ROOT_DIR+path)
     mixer.music.play()
     while mixer.music.get_busy() == True and block == True:
         continue
