@@ -1,0 +1,25 @@
+.chart-container {
+  width: 600px;
+  height: auto;
+  list-style-type: none;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, max-content));
+  grid-gap: 16px;
+  justify-content: center;
+  padding: 32px;
+}
+
+.centered {
+  font-family: arial;
+  font-size: 24px;
+  width: 100%;
+}
+
+.centered h3 {
+  text-align: center;
+}
