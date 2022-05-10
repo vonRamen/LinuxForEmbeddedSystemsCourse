@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt
 from pymongo import MongoClient
 import time    
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('192.168.10.193', 27017)
 db = client["data"]
 
 def handle_message(topic, payload):
