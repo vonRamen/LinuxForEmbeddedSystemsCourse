@@ -5,7 +5,7 @@ import pyttsx3
 import os
 import requests
 import time
-from datetime import datetime, time, date
+from datetime import datetime, time, date, timedelta
 from pygame import mixer
 import json
 import threading
@@ -60,9 +60,9 @@ def say(sentence):
         tts.save("temp.mp3")
         playsound("temp.mp3")
         os.remove("temp.mp3")
+        time.sleep(0.1)
         return True
-    except(e):
-        print(e)
+    except:
         return False
 
 
@@ -151,8 +151,8 @@ def playSong(artist, track=""):
         print('audio    : ' + track['preview_url'])
         URL = track['preview_url']
         response = requests.get(URL)
-        open("temp.mp3", "wb").write(response.content)
-        mixer.music.load('temp.mp3') # loads the music, can be also mp3 file.
+        open("desp.mp3", "wb").write(response.content)
+        mixer.music.load('desp.mp3') # loads the music, can be also mp3 file.
         mixer.music.play() # plays the music
         return
     
@@ -199,7 +199,7 @@ def listeningThread(listenImmediately = False):
                 if(alarmIsRinging == True and "stop" in sentence):
                     # Reset for the following day
                     global dateTimeForNextAlarm
-                    dateTimeForNextAlarm = dateTimeForNextAlarm + 24*60*60*1000
+                    dateTimeForNextAlarm += timedelta(days=1)
 
                     # Make it stop by overriding the sound with another one. 
                     alarmIsRinging = False
