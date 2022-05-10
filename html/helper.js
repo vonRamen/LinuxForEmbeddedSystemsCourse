@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 
 //API Call
-var apiUrlRoot = "http://"+location.host+"/Bridge.php";
+var apiUrlRoot = "http://"+location.host+"/bridge.php";
 console.log("API URL: "+apiUrlRoot)
 
 function _getData(type, gateway, worker, topic, from = 0, to = Number.MAX_SAFE_INTEGER) {
