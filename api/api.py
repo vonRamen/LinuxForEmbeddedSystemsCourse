@@ -5,8 +5,7 @@ import time
 import json
 from bson.json_util import dumps
 
-#client = MongoClient('192.168.10.193', 27017)
-client = MongoClient('localhost', 27017)
+client = MongoClient('192.168.10.193', 27017)
 db = client["data"]
 
 allowedDataCollections = ["temperature", "co2", "humidity"]
