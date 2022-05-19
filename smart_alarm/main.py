@@ -179,7 +179,7 @@ def listeningThread(listenImmediately = False):
         # exceptions at the runtime
         try:
             # use the microphone as source for input.
-            with sr.Microphone() as source2:
+            with sr.Microphone(device_index=3) as source2:
                 
                 # wait for a second to let the recognizer
                 # adjust the energy threshold based on
