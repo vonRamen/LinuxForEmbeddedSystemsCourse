@@ -172,6 +172,8 @@ def listeningThread(listenImmediately = False):
     listening = True
     listeningForNextSentence = listenImmediately
     listenerThreadInUse = True
+    print("Microphones:")
+    print(sr.Microphone.list_microphone_names())
     print("Listening...")
     while(listening):   
         
