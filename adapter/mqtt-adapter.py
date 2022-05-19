@@ -3,7 +3,6 @@ import time
 import requests
 
 apiIp = "http://localhost:8080/"
-db = client["data"]
 
 def handle_message(topic, payload):
     col = db[topic]
