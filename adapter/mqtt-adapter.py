@@ -1,8 +1,8 @@
 import paho.mqtt.client as mqtt
-from pymongo import MongoClient
 import time    
+import requests
 
-client = MongoClient('192.168.10.193', 27017)
+apiIp = "http://localhost:8080/"
 db = client["data"]
 
 def handle_message(topic, payload):
@@ -10,8 +10,7 @@ def handle_message(topic, payload):
     timestamp = int(time.time())
     values = {"Test": "Test", "message": payload, "timestamp": timestamp}
 
-    x = col.insert_one(values)
-    
+    x = requests.post(apiIp+topic, json = values)
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
